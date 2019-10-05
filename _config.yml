@@ -139,8 +139,16 @@ live2d:
   react:
     opacity: 0.7
 
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
+
+
 baidu_url_submit:
   count: 100
   host: guohaoxin.top
-  token: /
+  token: 887e25cc9b86260d78370020b3164617
   path: baidu_urls.txt

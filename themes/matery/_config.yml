@@ -3,28 +3,38 @@
 menu:
   Index:
     url: /
-    icon:
+    icon: fas fa-home
   Tags:
     url: /tags
-    icon:
+    icon: fas fa-tags
   Categories:
     url: /categories
-    icon:
+    icon: fas fa-bookmark
   Archives:
     url: /archives
-    icon:
+    icon: fas fa-archive
   download:
     url: /download
-    icon:
+    icon: fas fa-download
   About:
     url: /about
-    icon:
-  Friends:
-    url: /friends
-    icon:
+    icon: fas fa-user-circle
   Contact:
     url: /contact
-    icon:
+    icon: fas fa-comments
+  Friends:
+    url: /friends
+    icon: fas fa-address-book
+
+# Website start time.
+# 站点运行开始时间.
+time:
+  year: 2019 # 年份
+  month: 09 # 月份
+  date: 28 # 日期
+  hour: 00 # 小时
+  minute: 00 # 分钟
+  second: 00 # 秒
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
@@ -38,20 +48,20 @@ cover:
 # index page dream text,
 # 配置首页显示"梦想"的语句.
 dream:
-  enable: false
+  enable: true
   showTitle: true
-  title: 神秘嘉宾
-  text: 我搬到谁的隔壁，谁成了我的邻居。鸣谢生命有你参与，笑纳我的邀请。
+  title: MySchool
+  text: 这个世界很浮华，不要走得太快，有时候需要停一停，静一静，想一想，沉淀思绪后，重新出发，你一定要相信，没有到不了的明天。
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
 music:
   enable: true
-  showTitle: false
+  showTitle: true
   title: 听听音乐
-  fixed: ture # 开启吸底模式
+  fixed: false # 开启吸底模式
   autoplay: true # 是否自动播放
-  theme: '#542674'
+  theme: '#42b983'
   loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
   preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
@@ -64,14 +74,14 @@ music:
 video:
   enable: false
   showTitle: true
-  title: 邓紫棋 - 差不多姑娘
-  url: /medias/video/chabuduoguniang.mp4 # 必填
+  title: 精彩视频
+  url: # 必填
   pic:
   thumbnails:
   height: # 如：400
-  autoplay: true # 是否自动播放
+  autoplay: false # 是否自动播放
   theme: '#42b983'
-  loop: true # 是否循环播放
+  loop: false # 是否循环播放
   preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7
 
@@ -91,18 +101,21 @@ logo: /medias/logo.png
 indexbtn:
   enable: true
   name: Github
-  icon: fa-github-alt
+  icon: fab fa-github-alt
   url: https://github.com/HaoxinGuo
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  qq: 1210188858
-  github: haoxinGuo
-  weibo: 一个人吃饭喝酒
+  github: https://github.com/HaoxinGuo
   email: 1210188858@qq.com
-  zhihu: ghxtju
+  facebook: # https://www.facebook.com/xxx
+  twitter: # https://twitter.com/xxx
+  qq: 1210188858
+  weibo: # https://weibo.com/xxx
+  zhihu: https://www.zhihu.com/ghxtju
+  rss: true # true、false
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -129,7 +142,7 @@ reward:
 # minCharNumber: Approve copyright information by copying at least how many characters.
 # 是否激活复制文章时追加博客和作者的版权信息.
 copyright:
-  enable: true
+  enable: false
   minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
   description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
 
@@ -157,12 +170,6 @@ wordCount:
 # 是否激活点击页面的'爱心'效果，默认激活.
 clicklove:
   enable: true
-explosion:
-  enable: false
-firework:
-  enable: false
-text:
-  enable: false
 
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
@@ -228,11 +235,11 @@ mySkills:
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myGallery:
-  enable: false
+  enable: true
   data:
+    - /medias/featureimages/0.jpg
+    - /medias/featureimages/1.jpg
     - /medias/featureimages/2.jpg
-    - /medias/featureimages/5.jpg
-    - /medias/featureimages/6.jpg
 
 # Whether to display post-calender in the `archive` page
 # 设置在归档页面中是否显示'文章日历'控件
@@ -276,14 +283,15 @@ livere:
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
   enable: false
-  appId: 
-  appKey: 
+  appId:
+  appKey:
   notify: false
   verify: false
-  visitor: false
-  avatar: 'wavatar' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  visitor: true
+  avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10
-  placeholder: '如果你没有GitHub账号，还可以在这里评论啦！' # Comment Box placeholder
+  placeholder: 'just go go' # Comment Box placeholder
+  background: /medias/comment_bg.png
 
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
@@ -313,15 +321,24 @@ busuanziStatistics:
 # Add google analytics configuration
 # 添加 Google Analytics 配置
 googleAnalytics:
-  enable: true
+  enable: false
+  id:
+
+# Add baidu analytics configuration
+# 添加 baidu Analytics 配置
+baiduAnalytics:
+  enable: false
   id: 
+  
+# 百度搜索资源平台提交链接
+baiduPush: true
 
 # The used front-end library can be replaced with the corresponding CDN address as needed,
 # If the specific version is not specified below, you can use the latest version.
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
 libs:
   css:
-    fontAwesome: /libs/awesome/css/font-awesome.min.css # V4.7.0
+    fontAwesome: /libs/awesome/css/all.css # V5.11.1
     materialize: /libs/materialize/materialize.min.css # 1.0.0
     aos: /libs/aos/aos.css
     animate: /libs/animate/animate.min.css # V3.5.1
@@ -339,18 +356,19 @@ libs:
     scrollProgress: /libs/scrollprogress/scrollProgress.min.js
     lightgallery: /libs/lightGallery/js/lightgallery-all.min.js # V1.6.11
     clicklove: /libs/others/clicklove.js
-    explosion: /libs/others/explosion.min.js
-    firework: /libs/others/firework.js
-    text: /libs/others/text.js
     busuanzi: /libs/others/busuanzi.pure.mini.js
     aplayer: /libs/aplayer/APlayer.min.js
     dplayer: /libs/dplayer/DPlayer.min.js
     crypto: /libs/cryptojs/crypto-js.min.js
     echarts: /libs/echarts/echarts.min.js
     gitalk: /libs/gitalk/gitalk.min.js
+    valine: /libs/valine/Valine.min.js # 若想保持最新版，请替换为 https://unpkg.com/valine/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
     jqcloud: /libs/jqcloud/jqcloud-1.0.4.min.js
     tocbot: /libs/tocbot/tocbot.min.js
-    snow: /libs/others/snow.js
+    canvas_nest: /libs/background/canvas-nest.js
+    ribbon: /libs/background/ribbon.min.js
+    ribbon_dynamic: /libs/background/ribbon-dynamic.js
+    instantpage: /libs/instantpage/instantpage.js
 
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
@@ -383,31 +401,97 @@ featureImages:
 - /medias/featureimages/25.jpg
 - /medias/featureimages/26.jpg
 - /medias/featureimages/27.jpg
+# default configs that the default policy for every articles/posts
+# default 配置文章的默认转载规则
 
-  # default configs that the default policy for every articles/posts
-  # default 配置文章的默认转载规则
+# you can define reprint policy for a single article in the front-matter of the specific md file using this key: reprintPolicy
+# 您可以使用在文章md文件的 front-matter 中指定 reprintPolicy 来给单个文章配置转载规则
 
-  # you can define reprint policy for a single article in the front-matter of the specific md file using this key: reprintPolicy
-  # 您可以使用在文章md文件的 front-matter 中指定 reprintPolicy 来给单个文章配置转载规则
+# 可用的转载规则有（available reprint policies are）：
+# 这些转载规则的意义请参考(you can refer to this link FMI)：https://creativecommons.org/choose/?lang=zh
+# cc_by（知识共享署名 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
+# cc_by_nd（知识共享署名-禁止演绎 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
+# cc_by_sa（知识共享署名-相同方式共享 4.0 国际许可协议 Creative Commons Attribution-ShareAlike 4.0 International License）
+# cc_by_nc（知识共享署名-非商业性使用 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
+# cc_by_nc_nd（知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License）
+# cc_by_nc_sa（知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License）
 
-  # 可用的转载规则有（available reprint policies are）：
-  # 这些转载规则的意义请参考(you can refer to this link FMI)：https://creativecommons.org/choose/?lang=zh
-  # cc_by（知识共享署名 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
-  # cc_by_nd（知识共享署名-禁止演绎 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
-  # cc_by_sa（知识共享署名-相同方式共享 4.0 国际许可协议 Creative Commons Attribution-ShareAlike 4.0 International License）
-  # cc_by_nc（知识共享署名-非商业性使用 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
-  # cc_by_nc_nd（知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License）
-  # cc_by_nc_sa（知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License）
+# cc0（CC0 1.0 通用 (CC0 1.0) 公共领域贡献 CC0 1.0 Universal (CC0 1.0) Public Domain Dedication） https://creativecommons.org/publicdomain/zero/1.0/deed.zh
 
-  # cc0（CC0 1.0 通用 (CC0 1.0) 公共领域贡献 CC0 1.0 Universal (CC0 1.0) Public Domain Dedication） https://creativecommons.org/publicdomain/zero/1.0/deed.zh
-
-  # noreprint（不允许转载 not allowed to reprint）
-  # pay（付费转载 pay for reprinting）
+# noreprint（不允许转载 not allowed to reprint）
+# pay（付费转载 pay for reprinting）
 reprint:
   enable: true # whether enable reprint section 是否启用“转载规则限定模块”
   default: cc_by
-
-
-# 雪花特效
-snow:
+  
+# DaoVoice online contact 
+daovoice: 
+  enable: true
+  app_id:
+  
+# Tidio online contact 
+tidio:
+  enable: true
+  public_key: o7pc0k96tk3yrppymlgvk2w7khbyz8xs
+ 
+#背景canvas-nest
+canvas_nest:
   enable: false
+  color: 0,0,255 # 线条颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
+  pointColor: 0,0,255 # 交点颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
+  opacity: 0.7 # 线条透明度（0~1）, 默认: 0.5
+  zIndex: -1 # 背景的 z-index 属性，css 属性用于控制所在层的位置, 默认: -1.
+  count: 99 # 线条的总数量, 默认: 99
+
+# 背景静止彩带.
+ribbon:
+  enable: false
+  size: 150 # 彩带大小, 默认: 90.
+  alpha: 0.6 # 彩带透明度 (0 ~ 1), 默认: 0.6.
+  zIndex: -1 # 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1.
+  click_to_change: false  # 设置是否每次点击都更换彩带.
+
+# 背景动态彩带.
+ribbon_dynamic:
+  enable: true
+
+# sharejs文章分享模块.
+# 支持顺序，可选项目为twitter, facebook, google, qq, qzone, wechat, weibo, douban, linkedin.
+sharejs:
+  enable: true
+  sites: twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin
+
+# addthis文章分享模块.
+addthis:
+  enable: false
+  pubid:  #前往https://www.addthis.com/获取
+  
+# 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle: 
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub1: 精致的文艺不是浪漫，粗糙的宏大是浪漫。
+  sub2: Exquisite art is not romantic, rough grand is romantic.
+  
+# 手机二级菜单.
+navMenu:
+  mleft: false # 二级侧栏子菜单是否对齐左边
+  bgColor: " " # 二级侧栏子菜单背景颜色,留空即为全局背景色
+
+# 网页预加载.
+instantpage: true
+
+# banner 是否每日切换.
+# 若为 false, 则 banner 默认为 /medias/banner/0.jpg
+banner: true
+
+#ICP备案信息尾部显示
+icp:
+  enable: false
+  url: # 备案链接
+  text: # 备案信息
